@@ -2,7 +2,7 @@
 
 <%= form_tag create_user_path do %>
   <%= label_tag :name, "Your Name here!" %>
-  <%= text_area_tag :name, 'ex: Warren Shen', :maxlength => 25, :size => 40 %>
+  <%= text_area_tag :name, nil, :placeholder => 'ex: Warren Shen', :maxlength => 25, :size => 40 %>
   <%= submit_tag "Create user", :class => 'button' %>
 <% end %>
 </h2>
