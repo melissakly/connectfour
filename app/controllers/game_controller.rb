@@ -5,7 +5,7 @@ class GameController < ApplicationController
 		game = Game.new(user1: user1, user2: user2)
 		game.save!
 
-		redirect_to user_path, :user => user1
+		redirect_to user_path(user: user1)
 	end
 
 	def view

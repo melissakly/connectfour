@@ -1,6 +1,5 @@
 <% @users.each do |user| %>
-	<%= link_to 'Dashboard', user_path(user: user) %>
-	<%= user.name %><br />
+	<%= link_to user.name, user_path(user: user) %> <br/>
 <% end %>
 
 <%= form_tag create_user_path do %>
