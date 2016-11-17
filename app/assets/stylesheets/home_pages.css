@@ -1,13 +1,75 @@
+* {
+	font-family: Helvetica;
+}
+
 .home-header {
 	font-size: 30px;
 	font-weight: bold;
-	font-family: Helvetica;
 	color: #76d0ad;
-	text-decoration: underline;
 	text-transform: uppercase;
 	text-align: center;
+	border: dashed;
+	padding: 15px;
 }
 
-.users {
+.usersbox {
 	color: #FF4500;
+	border: dashed;
+	text-align: center;
+	text-decoration: none;
+}
+
+
+#list {
+	color: black;
+	font-weight: bold;
+	font-size: 30px;
+	margin-top: 5px;
+}
+
+.usertitle {
+	color: black;
+	height: 20px;
+}
+
+.projectitle {
+	font-size: 30px;
+	margin-top: 5px;
+	font-weight: bold;
+}
+
+.description {
+	color: 	#FF7F50;
+	
+	font-weight: bold;
+	border: dashed;
+	text-align: center;
+	width: 850px;
+	margin-left: 50px;
+	float: left;
+	height: 300px;
+}
+
+.home-header textarea {
+	width: 100px;
+	height: 40px;
+	border: 3px solid #cccccc;
+	padding: 5px;
+	transform: translateY(15px);
+	font-family: Tahoma, sans-serif;
+	background-repeat: no-repeat;
+}
+
+.button {
+	background-color: #76d0ad;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;	
+    transform: translateY(-5px);
 }

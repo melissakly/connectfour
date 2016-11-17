@@ -13,3 +13,37 @@
  *= require_tree .
  *= require_self
  */
+
+
+nav {
+	margin: 30px;
+	padding: 15px;
+	border: dashed;
+	color: #42C0FB;
+}
+
+.navright {
+	opacity: 0.5;
+	position: absolute;
+	margin-right: 10px;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+.facebooknav {
+	float: left;
+	padding-top: 12.5px;
+}
+
+li {
+	float: right;
+	display: block;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}

@@ -7,14 +7,33 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div>
-  <% if current_user %>
-    Signed in as <strong><%= current_user.name %></strong>!
-    <%= link_to "Sign out", signout_path, id: "sign_out" %>
-  <% else %>
-    <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
-  <% end %>
-</div>
+
+<nav>
+
+  <div class = "facebooknav">
+      <% if current_user %>
+        Signed in as <strong><%= current_user.name %></strong>!
+        <%= link_to "Sign out", signout_path, id: "sign_out" %>
+      <% else %>
+        <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+      <% end %>
+  </div> 
+
+  <ul>
+    <li>
+      Current Games
+    </li>
+
+    <li>
+      My Badges 
+    </li>
+
+    <li>
+      My Profile
+    </li>
+  </ul>
+
+</nav>
 <%= yield %>
  
 </body>
