@@ -1,0 +1,13 @@
+.home-header {
+	font-size: 30px;
+	font-weight: bold;
+	font-family: Helvetica;
+	color: #76d0ad;
+	text-decoration: underline;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.users {
+	color: #FF4500;
+}

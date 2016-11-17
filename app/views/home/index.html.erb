@@ -1,6 +1,4 @@
-<% @users.each do |user| %>
-	<%= link_to user.name, user_path(user: user) %> <br/>
-<% end %>
+<h2 class = "home-header">
 
 <%= form_tag create_user_path do %>
   <%= label_tag :name, "Your Name here!" %>
@@ -8,3 +6,11 @@
   <%= submit_tag "Create user" %>
 <% end %>
 
+</h2>
+
+<h3> List of users so far: </h3>
+<div class = "users">
+<% @users.each do |user| %>
+	<h3> <%= link_to user.name, user_path(user: user) %> </h3> 
+<% end %>
+</div>
