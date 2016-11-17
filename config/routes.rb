@@ -1,3 +1,8 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+	root to: 'home#index'
+
+	get 'user', to: 'user#view', as: :user
+
+	post 'create_user', to: 'user#create', as: :create_user
+	post 'create_game', to: 'game#create', as: :create_game
 end

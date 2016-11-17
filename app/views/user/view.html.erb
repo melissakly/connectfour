@@ -1,0 +1,14 @@
+<h1><% @curr_user %></h1>
+<% if !@games.nil? %>
+	<% @games.each do |game| %>
+		<%= game %>
+	<% end %>
+<% end %>
+
+<%= form_tag create_game_path do %>
+  <%= label_tag :user1, "Your Name here" %>
+  <%= text_area_tag :user1 %>
+  <%= label_tag :user2, "Your opponent's name here" %>
+  <%= text_area_tag :user2 %>
+  <%= submit_tag "Create game!" %>
+<% end %>
