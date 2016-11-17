@@ -2,9 +2,10 @@
 	font-family: Helvetica;
 }
 
+
 .home-header {
 	font-size: 30px;
-	font-weight: bold;
+	font-weight: 900;
 	color: #76d0ad;
 	text-transform: uppercase;
 	text-align: center;
@@ -22,7 +23,7 @@
 
 #list {
 	color: black;
-	font-weight: bold;
+	font-weight: 900;
 	font-size: 30px;
 	margin-top: 5px;
 }
@@ -41,7 +42,7 @@
 .description {
 	color: 	#FF7F50;
 	
-	font-weight: bold;
+	font-weight: 900;
 	border: dashed;
 	text-align: center;
 	width: 850px;
