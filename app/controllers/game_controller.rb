@@ -7,4 +7,10 @@ class GameController < ApplicationController
 
 		redirect_to user_path, :user => user1
 	end
+
+	def view
+		@user1 = params[:user1]
+		@user2 = params[:user2]
+		@status = params[:status]
+	end
 end
