@@ -1,0 +1,98 @@
+* {
+	font-family: Helvetica;
+}
+
+
+.home-header {
+	font-size: 30px;
+	font-weight: 900;
+	color: #76d0ad;
+	text-transform: uppercase;
+	text-align: center;
+	border: dashed;
+	padding: 15px;
+}
+
+.usersbox {
+	color: #FF4500;
+	border: dashed;
+	text-align: center;
+	text-decoration: none;
+	overflow-y: scroll;
+}
+
+
+#list {
+	color: #FF4500;
+
+	font-weight: 900;
+	font-size: 30px;
+	margin-top: 5px;
+}
+
+.usertitle {
+	color: black;
+	height: 20px;
+}
+
+.projectitle {
+	font-size: 30px;
+	margin-top: 5px;
+	font-weight: bold;
+}
+
+.description {
+	color: 	#FF7F50;
+	
+	font-weight: 900;
+	border: dashed;
+	text-align: center;
+	width: 850px;
+	margin-left: 50px;
+	float: left;
+	height: 300px;
+}
+
+.home-header textarea {
+	width: 400px;
+	height: 40px;
+	border: 3px solid #cccccc;
+	padding: 5px;
+	transform: translateY(15px);
+	font-family: Tahoma, sans-serif;
+	background-repeat: no-repeat;
+	font-size: 30px;
+	opacity: 0.7;
+	color: #76d0ad;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #76d0ad;
+  opacity: 0.3;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #76d0ad;
+  opacity: 0.3;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #76d0ad;
+  opacity: 0.3;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #76d0ad;
+  opacity: 0.3;
+}
+
+.button {
+	background-color: #76d0ad;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;	
+    transform: translateY(-5px);
+}

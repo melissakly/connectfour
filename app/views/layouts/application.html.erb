@@ -1,14 +1,42 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>App</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>Facebook Auth Example</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<nav>
 
-  <body>
-    <%= yield %>
-  </body>
+  <div class = "facebooknav">
+      <% if current_user %>
+        Signed in as <strong><%= current_user.name %></strong>!
+        <%= link_to "Sign out", signout_path, id: "sign_out" %>
+      <% else %>
+        <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+      <% end %>
+  </div> 
+
+  <ul>
+    <li>
+      <a href ="/"> Current Games </a>
+    </li>
+
+    <li>
+      <a href = "/"> My Badges </a>
+    </li>
+
+    <li>
+      <a href ="/"> My Profile </a>
+    </li>
+  </ul>
+
+</nav>
+<%= yield %>
+ 
+ <div id="background"></div>
+
+</body>
 </html>
