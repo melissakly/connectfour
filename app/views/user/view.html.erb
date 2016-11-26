@@ -2,7 +2,7 @@
 
 <% if !@games.nil? %>
 	<% @games.each do |game| %>
-		<%= game %>
+		<%= link_to game.user1, game_path(game: game) %>
 	<% end %>
 <% end %>
 

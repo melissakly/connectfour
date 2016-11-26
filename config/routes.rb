@@ -14,8 +14,11 @@ Rails.application.routes.draw do
 
   	get 'sessions/destroy'
 
+    get 'game', to: 'game#view'
+
 	get 'user', to: 'user#view', as: :user
 
 	post 'create_user', to: 'user#create', as: :create_user
 	post 'create_game', to: 'game#create', as: :create_game
+    post 'play_game', to: 'game#play', as: :play_game
 end

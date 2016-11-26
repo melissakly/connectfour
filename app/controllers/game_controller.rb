@@ -9,8 +9,46 @@ class GameController < ApplicationController
 	end
 
 	def view
-		@user1 = params[:user1]
-		@user2 = params[:user2]
-		@status = params[:status]
+		@config = {
+			1 => "yel",
+			2 => "red",
+			0 => "nan"
+		}
+		@game_id = params[:game]
+		game = Game.find(@game_id)
+		@user1 = User.find(game.user1).name
+		@user2 = User.find(game.user2).name
+		@status = game.status
+		@board = eval(game.matrix)
+	end
+
+	def play
+		game = Game.find(params[:game])
+		is_curr_player_1 = game.status == 'Player 1’s turn'
+		matrix = eval(game.matrix)
+		col = params[:column].to_i
+
+		# set the current piece
+		for i in 0..5
+			k = 5 - i
+			if matrix[k][col] == 0
+				if is_curr_player_1
+					matrix[k][col] = 1
+				else
+					matrix[k][col] = 2
+				end
+				break
+			end
+		end
+
+		game.update_attribute(:matrix, matrix.to_s)
+		if is_curr_player_1
+			game.update_attribute(:status, 'Player 2’s turn')
+		else
+			game.update_attribute(:status, 'Player 1’s turn')
+		end
+
+		redirect_to game_path(game: params[:game])
 	end
 end
+

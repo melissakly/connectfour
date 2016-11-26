@@ -1,3 +1,17 @@
-<% @user1 %> versus: <% @user2 %> <br />
-Status: <% @status %>
+<%= @user1 %> versus: <%= @user2 %> <br />
+Status: <%= @status  %> <br /> <br />
+
+<% for i in 0..5 %>
+	<% for j in 0..6 %>
+		<%= @config[@board[i][j]] %>
+	<% end %>
+	<br />
+<% end %>
+
+<%= form_tag play_game_path do %>
+  <%= label_tag :column, "Enter column number (from 0 to 6)" %>
+  <%= text_area_tag :column %><br />
+  <%= hidden_field_tag :game, @game_id %>
+  <%= submit_tag "Play!" %>
+<% end %>
 
