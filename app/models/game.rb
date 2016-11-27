@@ -30,7 +30,7 @@ class Game < ActiveRecord::Base
 
 		#check for horizontal wins
 		for row in 0..5
-			for col in 0..4
+			for col in 0..3
 				if matrix[row][col] == num and matrix[row][col+1] == num and matrix[row][col+2] == num and matrix[row][col+3] == num
 					return true
 				end
@@ -39,7 +39,7 @@ class Game < ActiveRecord::Base
 
 		#check for vertical wins
 		for col in 0..6
-			for row in 0..3
+			for row in 0..2
 				if matrix[row][col] == num and matrix[row+1][col] == num and matrix[row+2][col] == num and matrix[row+3][col] == num
 					return true
 				end
@@ -47,8 +47,8 @@ class Game < ActiveRecord::Base
 		end
 
 		#check for \ wins 
-		for row in 0..3
-			for col in 0..4
+		for row in 0..2
+			for col in 0..3
 				if matrix[row][col] == num and matrix[row+1][col+1] == num and matrix[row+2][col+2] == num and matrix[row+3][col+3] == num
 					return true
 				end
@@ -57,7 +57,7 @@ class Game < ActiveRecord::Base
 
 		#check for / wins
 		for row in 3..5
-			for col in 0..4
+			for col in 0..3
 				if matrix[row][col] == num and matrix[row-1][col+1] == num and matrix[row-2][col+2] == num and matrix[row-3][col+3] == num
 					return true
 				end
