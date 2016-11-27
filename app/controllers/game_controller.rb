@@ -3,6 +3,7 @@ class GameController < ApplicationController
 		puts params[:user1]
 		puts params[:user2]
 		user1 = User.where(name: params[:user1]).first
+
 		if User.exists?(name: params[:user2])
 			user2 = User.where(name: params[:user2]).first
 		else
@@ -37,7 +38,7 @@ class GameController < ApplicationController
 		is_curr_player_1 = game.status == 'Player 1’s turn'
 		matrix = eval(game.matrix)
 		col = params[:column].to_i
-
+		
 		# set the current piece
 		for i in 0..5
 			k = 5 - i
