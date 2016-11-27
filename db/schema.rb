@@ -10,12 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161127190831) do
+ActiveRecord::Schema.define(version: 20161127225100) do
 
   create_table "badges", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "wins",       default: 0
+    t.integer  "user_id"
   end
 
   create_table "games", force: :cascade do |t|
@@ -35,8 +37,9 @@ ActiveRecord::Schema.define(version: 20161127190831) do
     t.string   "name"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.integer  "wins",             default: 0
   end
 
 end

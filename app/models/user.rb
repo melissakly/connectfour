@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id               :integer          not null, primary key
+#  provider         :string
+#  uid              :string
+#  name             :string
+#  oauth_token      :string
+#  oauth_expires_at :datetime
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#  wins             :integer          default(0)
+#
+
 require 'koala'
 
 class User < ActiveRecord::Base

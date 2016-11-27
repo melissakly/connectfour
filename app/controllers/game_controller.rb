@@ -1,7 +1,5 @@
 class GameController < ApplicationController
 	def create
-		puts params[:user1]
-		puts params[:user2]
 		user1 = User.where(name: params[:user1]).first
 
 		if User.exists?(name: params[:user2])

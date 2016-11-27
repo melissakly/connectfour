@@ -3,7 +3,9 @@ class UserController < ApplicationController
 		name = params[:name]
 		new_user = User.new(name: name)
 		new_user.save!
-
+		new_badge = Badge.new(user: new_user)
+		new_badge.save!
+		
 		redirect_to '/'
 	end
 
@@ -14,5 +16,10 @@ class UserController < ApplicationController
 		fb_token = @curr_user.oauth_token
 		graph = Koala::Facebook::API.new(fb_token)
 		@friends = graph.get_connections("me", "friends")
+	end
+
+	def badges
+		@curr_user ||= User.find(session[:user_id]) if session[:user_id]
+		@curr_badge = Badge.where(user: @curr_user).first
 	end
 end
