@@ -14,6 +14,27 @@
  *= require_self
  */
 
+ body {
+ 	font-family: Helvetica;
+ }
+
+.game__text {
+	text-align: center;
+}
+
+#game__board {
+	width: 500px;
+	height: 100%;
+	margin: auto;
+}
+
+#game__title {
+	font-size: 30px;
+}
+
+#game__status--win {
+
+}
 .nan {
 	height: 30px;
 	width: 30px;

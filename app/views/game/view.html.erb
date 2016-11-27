@@ -1,6 +1,18 @@
-<%= @user1 %> versus: <%= @user2 %> <br />
-Status: <%= @status  %> <br /> <br />
-<table width="350px" height="100%">
+<div class="game__text" id="game__title">
+	<%= @user1 %> vs <%= @user2 %>
+</div>
+
+<% if !@winner.nil? %>
+	<div class="game__text" id="game__status--win">
+		<%= @winner %> wins!
+	</div>
+<% else %>
+	<div class="game__text" id="game__status--curr">
+		Player <%= @curr_player %>’s turn
+	</div>
+<% end %>
+
+<table id="game__board">
 	<% for i in 0..5 %>
 	<tr>
 		<% for j in 0..6 %>
@@ -10,14 +22,13 @@ Status: <%= @status  %> <br /> <br />
 	<% end %>
 </table>
 <br/><br/>
-<% if @can_move %>
+
+<% if @winner.nil? %>
 	<%= form_tag play_game_path do %>
 	  <%= label_tag :column, "Enter column number (from 0 to 6)" %>
 	  <%= text_area_tag :column %><br />
 	  <%= hidden_field_tag :game, @game_id %>
 	  <%= submit_tag "Play!" %>
 	<% end %>
-<% else %>
-	Awaiting opponent's move!
 <% end %>
 

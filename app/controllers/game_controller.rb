@@ -27,37 +27,17 @@ class GameController < ApplicationController
 		game = Game.find(@game_id)
 		@user1 = User.find(game.user_1).name
 		@user2 = User.find(game.user_2).name
-		@status = game.status
+		@curr_player = game.curr_player
 		@board = eval(game.matrix)
-		@can_move = @status == 'Player 1’s turn' && @curr_user.name == @user1 ||
-					@status == 'Player 2’s turn' && @curr_user.name == @user2
+		@can_move = game.curr_player == 1 && @curr_user.name == @user1 ||
+					game.curr_player == 2 && @curr_user.name == @user2
+		@winner = game.winner
 	end
 
 	def play
 		game = Game.find(params[:game])
-		is_curr_player_1 = game.status == 'Player 1’s turn'
-		matrix = eval(game.matrix)
 		col = params[:column].to_i
-		
-		# set the current piece
-		for i in 0..5
-			k = 5 - i
-			if matrix[k][col] == 0
-				if is_curr_player_1
-					matrix[k][col] = 1
-				else
-					matrix[k][col] = 2
-				end
-				break
-			end
-		end
-
-		game.update_attribute(:matrix, matrix.to_s)
-		if is_curr_player_1
-			game.update_attribute(:status, 'Player 2’s turn')
-		else
-			game.update_attribute(:status, 'Player 1’s turn')
-		end
+		game.play(col)
 
 		redirect_to game_path(game: params[:game])
 	end
