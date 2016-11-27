@@ -1,7 +1,14 @@
 class GameController < ApplicationController
 	def create
+		puts params[:user1]
+		puts params[:user2]
 		user1 = User.where(name: params[:user1]).first
-		user2 = User.where(name: params[:user2]).first
+		if User.exists?(name: params[:user2])
+			user2 = User.where(name: params[:user2]).first
+		else
+			user2 = User.create(name: params[:user2])
+		end
+
 		game = Game.new(user_1: user1, user_2: user2)
 		game.save!
 
@@ -9,6 +16,7 @@ class GameController < ApplicationController
 	end
 
 	def view
+		@curr_user ||= User.find(session[:user_id]) if session[:user_id]
 		@config = {
 			1 => "yel",
 			2 => "red",
@@ -20,6 +28,8 @@ class GameController < ApplicationController
 		@user2 = User.find(game.user_2).name
 		@status = game.status
 		@board = eval(game.matrix)
+		@can_move = @status == 'Player 1’s turn' && @curr_user.name == @user1 ||
+					@status == 'Player 2’s turn' && @curr_user.name == @user2
 	end
 
 	def play
