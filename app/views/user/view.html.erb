@@ -1,4 +1,4 @@
-<h1><% @curr_user_name %></h1>
+<h1><% @curr_user.name %></h1>
 
 <h2>Your current games: </h2>
 <% if !@games.nil? %>
@@ -11,7 +11,7 @@
 <br />
 <h2>Start a game with: </h2>
 <% @friends.each do |friend| %>
-	<%= link_to friend["name"], create_game_path(user1: @curr_user_name, user2: friend["name"]), method: :post %> <br/>
+	<%= link_to friend["name"], create_game_path(user1: @curr_user.name, user2: friend["name"]), method: :post %> <br/>
 <% end %>
 
 <%= form_tag create_game_path do %>
