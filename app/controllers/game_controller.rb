@@ -2,7 +2,7 @@ class GameController < ApplicationController
 	def create
 		user1 = User.where(name: params[:user1]).first
 		user2 = User.where(name: params[:user2]).first
-		game = Game.new(user1: user1, user2: user2)
+		game = Game.new(user_1: user1, user_2: user2)
 		game.save!
 
 		redirect_to user_path(user: user1)
@@ -16,8 +16,8 @@ class GameController < ApplicationController
 		}
 		@game_id = params[:game]
 		game = Game.find(@game_id)
-		@user1 = User.find(game.user1).name
-		@user2 = User.find(game.user2).name
+		@user1 = User.find(game.user_1).name
+		@user2 = User.find(game.user_2).name
 		@status = game.status
 		@board = eval(game.matrix)
 	end
