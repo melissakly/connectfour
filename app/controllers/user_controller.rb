@@ -32,6 +32,15 @@ class UserController < ApplicationController
 
 	def profile
 		@curr_user ||= User.find(session[:user_id]) if session[:user_id]
+		@curr_badge = Badge.where(user: @curr_user).first
+		if @curr_badge.nil?
+			@wins = 0
+		else
+			@wins = @curr_badge.wins
+		end
+
+   		@image = "http://graph.facebook.com/#{@curr_user.uid}/picture?type=large"
+
 	end
 
 end

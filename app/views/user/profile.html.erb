@@ -1,1 +1,18 @@
-<h1> Your profile </h1>
+<h1 class = "profiletitle"> ~ Your profile ~ </h1>
+
+<div id = "container" style = "overflow: hidden; width: 100%">
+  <div class="fun" style = "overflow: hidden; ">
+
+	<%= image_tag(@image, :alt => "rss feed", :class => 'profilepic') %>
+	
+	<div class = "stats">
+		<h3 class = "name"> <%= @curr_user.name %> </h3>
+		<hr>  
+		Wins: <%= @wins %> </br>
+		Loses: </br>
+		W/L Ratio: </br>
+		Number of Games Played: 
+	</div>
+
+  </div>
+</div>
