@@ -5,10 +5,10 @@ Connect Four
 
 Idea
 ----
-An online platform that allows users to create accounts (or login using an existing Facebook account) and play Connect Four against each other. This platform stores all game-play data for the current user, such as: wins, losses, win-to-lose ratio, and total games played. Badges are earned when the user achieves a certain amount of wins or losses.
+An online platform that allows users to create accounts (or login using an existing Facebook account) and play Connect Four against each other. This platform stores all game play data for the current user, such as: wins, losses, win-to-lose ratio, and total games played. Badges are earned when the user achieves a certain amount of wins or losses.
 
 
-How to play Connect Four: Two-person required game where each player tries to connect four of their pieces in a row - vertically, horizontally, or diagonally - and prevent the opponent from doing the same
+How to play Connect Four: Two-person required game where each player tries to connect four of their pieces in a row - vertically, horizontally, or diagonally - and prevent their opponent from doing the same.
 
 
 Models and Description
