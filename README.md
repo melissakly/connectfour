@@ -25,7 +25,7 @@ Models and Description
 Features
 --------
 * Users can log in via Facebook account 
-* Gems introduced: ‘omniauth’ | ‘omni-auth-facebook’ | ‘koala’
+* Gems introduced: `omniauth`, `koala`
 * Includes a personal portfolio page for users 
 * Any two users can start a game of connect four
 * Connect Four game states can be saved
