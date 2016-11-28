@@ -69,11 +69,29 @@
     z-index: -1;
 }
 
+.navlink {
+	color: #42C0FB;
+	font-weight: 900;
+	text-decoration: none;
+	font-size: 20px;
+}
+
 nav {
 	margin: 30px;
 	padding: 15px;
 	border: dashed;
 	color: #42C0FB;
+}
+
+.sign {
+	color: black;
+	font-weight: 900;
+	text-decoration: none;
+	border: solid;
+	opacity: 0.3;
+	padding: 5px;
+	font-size: 27.5px;
+	float: left;
 }
 
 .navright {

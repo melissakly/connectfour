@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Facebook Auth Example</title>
+  <title>Connect Four</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -10,26 +10,26 @@
 
 <nav>
 
-  <div class = "facebooknav">
+  <div class = "sign">
       <% if current_user %>
         Signed in as <strong><%= current_user.name %></strong>!
         <%= link_to "Sign out", signout_path, id: "sign_out" %>
       <% else %>
-        <%= link_to "Sign in with Facebook", "/auth/facebook?scope=user_friends", id: "sign_in" %>
+        <%= link_to "Sign in with Facebook", "/auth/facebook?scope=user_friends", id: "sign_in"%>
       <% end %>
   </div> 
 
   <ul>
     <li>
-      <a href ="/"> Current Games </a>
+      <a class = "navlink" href ="/"> Current Games </a>
     </li>
 
     <li>
-      <a href = "/badges"> My Badges </a>
+      <a class = "navlink" href = "/badges"> My Badges </a>
     </li>
 
     <li>
-      <a href ="/"> My Profile </a>
+      <a class = "navlink" href ="/"> My Profile </a>
     </li>
   </ul>
 
