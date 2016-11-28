@@ -20,12 +20,69 @@
 
 .game__text {
 	text-align: center;
+	color: #42C0FB;
+	font-size: 25px;
+}
+
+.board {
+	border-right: blue solid 10px;
+	border-bottom: black solid 10px;
+	border-left: blue solid 10px;
+	
+	position: absolute;
+    top: 35%;
+    left: 25%;
+    
+    
+	width: 600px;
+	height: auto;
+	padding: 20px;
+}
+
+.gameplay {
+	font-size: 30px;
+	font-weight: 900;
+	color: #76d0ad;
+	text-transform: uppercase;
+	
+	position: absolute;
+	top: 80%;
+	left: 20%;
+	padding: 15px;
+}
+
+.gameplay textarea {
+	width: 30px;
+	height: 40px;
+	border: 3px solid #cccccc;
+	padding: 5px;
+	transform: translateY(15px);
+	font-family: Tahoma, sans-serif;
+	background-repeat: no-repeat;
+	font-size: 30px;
+	opacity: 0.7;
+	color: #76d0ad;
+}
+
+.gamebutton {
+	background-color: #76d0ad;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;	
+    transform: translateY(-5px);
 }
 
 #game__board {
-	width: 500px;
+	width: 550px;
 	height: 100%;
 	margin: auto;
+	
 }
 
 #game__title {
@@ -38,21 +95,24 @@
 .nan {
 	height: 30px;
 	width: 30px;
+	border: dashed;
 }
 .yel {
 	background-color: yellow;
 	height: 30px;
 	width: 30px;
-	margin: auto;
+	
 	border-radius: 50%;
+	border: solid;
 }
 
 .red {
 	background-color: red;
 	height: 30px;
 	width: 30px;
-	margin: auto;
+	
 	border-radius: 50%;
+	border: solid;
 }
 
 #background {
@@ -134,12 +194,28 @@ nav {
 	color: #42C0FB;
 }
 
+.signb {
+	color: #42C0FB;
+}
+
+.userb {
+	color: #FF4500;
+	opacity: 0.9;	
+	text-decoration: none;
+}
+
+.signo {
+	color: blue;
+	opacity: 0.4;
+	text-decoration: none;
+}
+
 .sign {
-	color: black;
+	color: #42C0FB;
 	font-weight: 900;
 	text-decoration: none;
 	border: solid;
-	opacity: 0.3;
+	
 	padding: 5px;
 	font-size: 27.5px;
 	float: left;

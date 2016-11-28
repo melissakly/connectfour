@@ -1,6 +1,12 @@
-<div class="game__text" id="game__title">
-	<%= @user1 %> vs <%= @user2 %>
+<div id = "container" style = "overflow: hidden; width: 100%">
+	<div id="inner" style = "overflow: hidden; ">
+		
+		
 </div>
+
+<div class="game__text" id="game__title">
+			<%= @user1 %> vs <%= @user2 %>
+		</div>
 
 <% if !@winner.nil? %>
 	<div class="game__text" id="game__status--win">
@@ -12,23 +18,32 @@
 	</div>
 <% end %>
 
+<br> 
+<br>
+<div class = "board">
 <table id="game__board">
 	<% for i in 0..5 %>
 	<tr>
+		
 		<% for j in 0..6 %>
-			<td><div class=<%= @config[@board[i][j]] %>></div></td>
-		<% end %>
+			<td> <div class= <%= @config[@board[i][j]] %>  > </div></td>
+		<% end %>	
+
+
 	</tr>
 	<% end %>
 </table>
+</div>
 <br/><br/>
 
+<div class = "gameplay">
 <% if @winner.nil? %>
 	<%= form_tag play_game_path do %>
 	  <%= label_tag :column, "Enter column number (from 0 to 6)" %>
-	  <%= text_area_tag :column %><br />
+	  <%= text_area_tag :column, nil, :maxlength => 1, :size => 40 %>
 	  <%= hidden_field_tag :game, @game_id %>
-	  <%= submit_tag "Play!" %>
+	  <%= submit_tag "Play!", :class => 'gamebutton' %>
 	<% end %>
 <% end %>
 
+</div>

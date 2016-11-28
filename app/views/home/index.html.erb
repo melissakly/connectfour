@@ -34,7 +34,7 @@
 		<div class = "usersbox" style = "float:left; width: 300px; height: 300px">
 
 			<div class = "usertitle">
-			<h3 id = "list"> USERS </h3>
+			<h3 id = "list"> FB USERS </h3>
 			</div>
 
 			<br>
@@ -42,7 +42,12 @@
 
 			<div class = "users">
 			<% @users.each do |user| %>
-				<h3> <%= link_to user.name, user_path(user: user) %> </h3> 
+
+				<!-- verify fb user -->
+				<% if !user.uid.nil? %>
+					<h3> <%= link_to user.name, user_path(user: user), :class => 'userb' %> </h3> 
+				<% end %>
+				
 			<% end %>
 			</div>
 
