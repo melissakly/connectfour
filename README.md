@@ -15,8 +15,10 @@ Models and Description
 -----------------------
 ###### User
 * has one unique account and many games to play
+
 ###### Badge
 * has achievements for a user (a user can have many badges)
+
 ###### Game
 * has game states for two users (a user can have many game states)
 
