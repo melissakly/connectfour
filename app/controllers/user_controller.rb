@@ -1,4 +1,6 @@
 class UserController < ApplicationController
+
+	# create might be a bit unnecessary since we have fb integration :)
 	def create
 		name = params[:name]
 		new_user = User.new(name: name)
@@ -27,4 +29,9 @@ class UserController < ApplicationController
 			@wins = @curr_badge.wins
 		end
 	end
+
+	def profile
+		@curr_user ||= User.find(session[:user_id]) if session[:user_id]
+	end
+
 end

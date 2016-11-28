@@ -19,6 +19,7 @@
       <% end %>
   </div> 
 
+  <% if current_user %>
   <ul>
     <li>
       <a class = "navlink" href ="/"> Current Games </a>
@@ -29,9 +30,31 @@
     </li>
 
     <li>
-      <a class = "navlink" href ="/"> My Profile </a>
+      <a class = "navlink" href ="/profile"> My Profile </a>
     </li>
   </ul>
+  <% else %>
+  <ul>
+    <li>
+      <a class = "navlink3" href ="https://github.com/tinazheng/connectfour" target="_blank">  ᕕ( ᐛ )ᕗ </a>
+    </li>
+    <li> 
+      <a class = "navlinktina" href ="https://www.facebook.com/tinazheng?fref=ts" target="_blank"> o(^▽^)o </a> 
+    </li>
+    <li> 
+      <a class = "navlinkmelissa" href ="https://www.facebook.com/profile.php?id=100000090248103&fref=ts" target="_blank"> o(^▽^)o </a> 
+    </li>
+    <li> 
+      <a class = "navlinkjustin" href ="https://www.facebook.com/justin.ma.5?fref=ts" target="_blank"> o(^▽^)o </a> 
+    </li>
+    <li> 
+      <a class = "navlinknanxi" href ="https://www.facebook.com/ixnanxi?fref=ts" target="_blank"> o(^▽^)o </a> 
+    </li>
+    <li> 
+      <a class = "navlinkcasey" href ="https://www.facebook.com/CaseTakeda?fref=ts" target="_blank"> o(^▽^)o </a> 
+    </li>
+  </ul>
+  <% end %>
 
 </nav>
 <%= yield %>

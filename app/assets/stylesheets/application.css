@@ -76,6 +76,57 @@
 	font-size: 20px;
 }
 
+.navlink2 {
+	color: #42C0FB;
+	font-weight: 900;
+	text-decoration: none;
+	font-size: 20px;
+}
+
+
+.navlink3 {
+	color: black;
+	font-weight: 900;
+	text-decoration: none;
+	font-size: 20px;
+	opacity: 0.5;
+}
+
+.navlinktina {
+	color: blue;
+	font-weight: 900;
+	text-decoration: none;
+	font-size: 20px;
+	opacity: 0.5;
+}
+.navlinkmelissa {
+	color: pink;
+	font-weight: 900;
+	text-decoration: none;
+	font-size: 20px;
+}
+.navlinkjustin {
+	color: green;
+	font-weight: 900;
+	text-decoration: none;
+	font-size: 20px;
+	opacity: 0.5;
+}
+.navlinknanxi {
+	color: red;
+	font-weight: 900;
+	text-decoration: none;
+	font-size: 20px;
+	opacity: 0.5;
+}
+.navlinkcasey {
+	color: orange;
+	font-weight: 900;
+	text-decoration: none;
+	font-size: 20px;
+	opacity: 0.5;
+}
+
 nav {
 	margin: 30px;
 	padding: 15px;
