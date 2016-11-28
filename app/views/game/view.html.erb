@@ -11,6 +11,7 @@
 <% if !@winner.nil? %>
 	<div class="game__text" id="game__status--win">
 		<%= @winner %> wins!
+		<%= link_to "Click here to claim your prize!", image_path('https://www.youtube.com/watch?v=NRSKZmJLnJ0') %>
 	</div>
 <% else %>
 	<div class="game__text" id="game__status--curr">
