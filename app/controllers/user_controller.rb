@@ -1,6 +1,5 @@
 class UserController < ApplicationController
 
-	# create might be a bit unnecessary since we have fb integration :)
 	def create
 		name = params[:name]
 		new_user = User.new(name: name)

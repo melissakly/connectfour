@@ -1,23 +1,32 @@
-<h1><% @curr_user.name %></h1>
 
-<h2>Your current games: </h2>
-<% if !@games.nil? %>
-	<% @games.each do |game| %>
-		<%= link_to game.user_1.name + " vs " + game.user_2.name, game_path(game: game) %>
-		<br/>
-	<% end %>
-<% end %>
+<h1 class = "title"> ~ Welcome to Connect Four! ~ </h1>
+<div id = "container" style = "overflow: hidden; width: 100%">
 
-<br />
-<h2>Start a game with: </h2>
-<% @friends.each do |friend| %>
-	<%= link_to friend["name"], create_game_path(user1: @curr_user.name, user2: friend["name"]), method: :post %> <br/>
-<% end %>
+ 	<div class="fun" style = "overflow: hidden; ">
 
-<%= form_tag create_game_path do %>
-  <%= label_tag :user1, "Your Name here" %>
-  <%= text_area_tag :user1 %><br />
-  <%= label_tag :user2, "Your opponent's name here" %>
-  <%= text_area_tag :user2 %><br />
-  <%= submit_tag "Create game!" %>
-<% end %>
+		
+		<% if !@games.nil? %>
+			<% @games.each do |game| %>
+				<%= link_to game.user_1.name + " vs " + game.user_2.name, game_path(game: game) %>
+				<br/>
+			<% end %>
+		<% else %>
+			<h2 class = "no_games"> You don't have any current games right now! </h2>
+		<% end %>
+
+		<br />
+		<h2>Start a game with: </h2>
+		<% @friends.each do |friend| %>
+			<%= link_to friend["name"], create_game_path(user1: @curr_user.name, user2: friend["name"]), method: :post %> <br/>
+		<% end %>
+
+		<%= form_tag create_game_path do %>
+		  <%= label_tag :user1, "Your Name here" %>
+		  <%= text_area_tag :user1 %><br />
+		  <%= label_tag :user2, "Your opponent's name here" %>
+		  <%= text_area_tag :user2 %><br />
+		  <%= submit_tag "Create game!" %>
+		<% end %>
+
+	</div>
+</div>

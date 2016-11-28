@@ -22,6 +22,8 @@ Rails.application.routes.draw do
 
     get 'profile', to: 'user#profile'
 
+    get 'mygames', to: 'user#view'
+
 	post 'create_user', to: 'user#create', as: :create_user
 	post 'create_game', to: 'game#create', as: :create_game
     post 'play_game', to: 'game#play', as: :play_game
