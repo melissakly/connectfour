@@ -33,30 +33,39 @@ class Game < ActiveRecord::Base
 		if win?(self.curr_player)
 			update! winner: self.curr_player == 1 ? user_1.name : user_2.name
 			if self.curr_player == 1
-				if Badge.exists?(user: user_1)
-					badge = Badge.where(user: user_1).first
-					badge.wins = badge.wins + 1
-					badge.save!
-	    		else
-	    			new_badge = Badge.new(user: user_1)
-	    			new_badge.wins = new_badge.wins + 1
-	    			new_badge.save!
-	    		end
-				
+				victory(user_1)
+				defeat(user_2)	
 			else
-				if Badge.exists?(user: user_2)
-					badge = Badge.where(user: user_2).first
-					badge.wins = badge.wins + 1
-					badge.save!
-	    		else
-	    			new_badge = Badge.new(user: user_2)
-	    			new_badge.wins = new_badge.wins + 1
-	    			new_badge.save!
-	    		end
+				victory(user_2)
+				defeat(user_1)
 			end
 		else
 			# toggle between 1 and 2
 			update! curr_player: 3 - self.curr_player
+		end
+	end
+
+	def victory(player)
+		if Badge.exists?(user: player)
+			badge = Badge.where(user: player).first
+			badge.wins = badge.wins + 1
+			badge.save!
+		else
+			new_badge = Badge.new(user: player)
+			new_badge.wins = new_badge.wins + 1
+			new_badge.save!
+		end
+	end
+
+	def defeat(player)
+		if Badge.exists?(user: player)
+			badge = Badge.where(user: player).first
+			badge.losses = badge.losses + 1
+			badge.save!
+		else
+			new_badge = Badge.new(user: player)
+			new_badge.losses = new_badge.losses + 1
+			new_badge.save!
 		end
 	end
 

@@ -7,6 +7,8 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  wins       :integer          default(0)
+#  user_id    :integer
+#  losses     :integer          default(0)
 #
 
 class Badge < ActiveRecord::Base

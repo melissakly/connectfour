@@ -35,8 +35,14 @@ class UserController < ApplicationController
 		@curr_badge = Badge.where(user: @curr_user).first
 		if @curr_badge.nil?
 			@wins = 0
+			@losses = 0
+			@ratio = 0
+			@total = 0
 		else
 			@wins = @curr_badge.wins
+			@losses = @curr_badge.losses
+			@ratio = @wins.to_f / (@wins + @losses)
+			@total = @wins + @losses
 		end
 
    		@image = "http://graph.facebook.com/#{@curr_user.uid}/picture?type=large"
