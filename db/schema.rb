@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161128020929) do
+ActiveRecord::Schema.define(version: 20161128231134) do
 
   create_table "badges", force: :cascade do |t|
     t.string   "name"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 20161128020929) do
     t.integer  "wins",       default: 0
     t.integer  "user_id"
     t.integer  "losses",     default: 0
+    t.integer  "wstreak",    default: 0
+    t.integer  "lstreak",    default: 0
   end
 
   create_table "games", force: :cascade do |t|

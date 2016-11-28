@@ -22,10 +22,22 @@ class UserController < ApplicationController
 	def badges
 		@curr_user ||= User.find(session[:user_id]) if session[:user_id]
 		@curr_badge = Badge.where(user: @curr_user).first
+		@no_badge = false
+		@three_win = false
+		@five_win = false
+		@three_loss = false
 		if @curr_badge.nil?
-			@wins = 0
+			@no_badge = true
 		else
-			@wins = @curr_badge.wins
+			if @curr_badge.wstreak >= 3
+				@three_win = true
+			end
+			if @curr_badge.wstreak >= 5
+				@five_win = true
+			end
+			if @curr_badge.lstreak >= 3
+				@three_loss = true
+			end
 		end
 	end
 

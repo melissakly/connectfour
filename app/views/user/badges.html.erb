@@ -3,8 +3,19 @@
 <div id = "container" style = "overflow: hidden; width: 100%">
 
  	<div class="badges" style = "overflow: hidden; ">
-
-		Wins: <%= @wins %> </br>
+ 		<% if @no_badge %>
+ 			<h1> YOU HAVE NO BADGES </h1>
+ 		<% else %>
+ 			<% if @three_win %>
+ 				<h1> YOU ARE ON A THREE WIN STREAK </h1>
+ 			<% end %>
+ 			<% if @five_win %>
+ 				<h1> YOU ARE ON A FIVE WIN STREAK </h1>
+ 			<% end %>
+ 			<% if @three_loss %>
+ 				<h1> YOU ARE ON A THREE LOSS STREAK </h1>
+ 			<% end %>
+ 		<% end %>
 				
 		
 	</div>

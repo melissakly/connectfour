@@ -49,10 +49,14 @@ class Game < ActiveRecord::Base
 		if Badge.exists?(user: player)
 			badge = Badge.where(user: player).first
 			badge.wins = badge.wins + 1
+			badge.wstreak = badge.wstreak + 1
+			badge.lstreak = 0
 			badge.save!
 		else
 			new_badge = Badge.new(user: player)
 			new_badge.wins = new_badge.wins + 1
+			new_badge.wstreak = new_badge.wstreak + 1
+			new_badge.lstreak = 0
 			new_badge.save!
 		end
 	end
@@ -61,10 +65,14 @@ class Game < ActiveRecord::Base
 		if Badge.exists?(user: player)
 			badge = Badge.where(user: player).first
 			badge.losses = badge.losses + 1
+			badge.wstreak = 0
+			badge.lstreak = badge.lstreak + 1
 			badge.save!
 		else
 			new_badge = Badge.new(user: player)
 			new_badge.losses = new_badge.losses + 1
+			new_badge.wstreak = 0
+			new_badge.lstreak = new_badge.lstreak + 1
 			new_badge.save!
 		end
 	end

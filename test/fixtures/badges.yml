@@ -9,6 +9,8 @@
 #  wins       :integer          default(0)
 #  user_id    :integer
 #  losses     :integer          default(0)
+#  wstreak    :integer          default(0)
+#  lstreak    :integer          default(0)
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
