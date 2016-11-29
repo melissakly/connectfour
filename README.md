@@ -1,7 +1,7 @@
 Connect Four
 ============
 
-### Tina Zheng, Nanxi Wang, Casey Takeda, Justin Ma, Melissa Ly
+### by Tina Zheng, Nanxi Wang, Casey Takeda, Justin Ma, Melissa Ly
 
 Demo Link
 ----------
