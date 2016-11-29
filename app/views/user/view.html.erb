@@ -1,18 +1,18 @@
 
-<h1 class = "title"> ~ Welcome to Connect Four! ~ </h1>
+<h1 class = "title" style = "color: orange;"> ~ Welcome to Connect Four! ~ </h1>
 <div id = "container" style = "overflow: hidden; width: 100%">
 
  	<div class="fun" style = "overflow: hidden; ">
 
  		<div style = "float:left; width: 500px; height: 500px; overflow-y: scroll; margin-left: 40px;">
 
-	 		<h2 class = "current_games"> Current Games </h2>
+	 		<h2 class = "current_games" style = "color: #42C0FB;"> Current Games </h2>
 			
 			<hr style = "width: 500px;">
 
 			<% if !@games.nil? %>
 				<% @games.each do |game| %>
-					<%= link_to game.user_1.name + " vs " + game.user_2.name, game_path(game: game), :class => 'curr_games' %>
+					<%= link_to game.user_1.name + " vs " + game.user_2.name, game_path(game: game), :class => 'curr_games1' %>
 					<br/>
 				<% end %>
 			<% else %>
@@ -23,20 +23,22 @@
 
 		<div class="verticalLine" style = "border-left: thick dashed blue; float: left; height: 500px; opacity: 0.3; margin-left: 58px;"> </div>
 
-		<h2> Start a Game With </h2>
+		<h2 style = "color: green;"> Start a Game With </h2>
 
 		<hr style = "width: 500px;">
 
+		<div style = "overflow-y: scroll;">
 		<% @friends.each do |friend| %>
-			<%= link_to friend["name"], create_game_path(user1: @curr_user.name, user2: friend["name"]), :class => 'curr_games', method: :post %> <br/>
+			<%= link_to friend["name"], create_game_path(user1: @curr_user.name, user2: friend["name"]), :class => 'curr_games2', method: :post %> <br/>
 		<% end %>
+		</div>
 
 		<br />
 		<%= form_tag create_game_path do %>
 		  <% label_tag :user1, @curr_user.name %>
 		  <% text_area_tag :user1 %>
 		  <%= label_tag :user2, "Enter Opponent's Name Here" %> </br>
-		  <%= text_area_tag :user2, nil, :placeholder => 'ex: Warren Shen', :maxlength => 25, :size => 40 %> <br />
+		  <%= text_area_tag :user2, nil, :placeholder => 'ex: Warren Shen', :maxlength => 22, :size => 40 %> <br />
 		  <%= submit_tag "Create game!", :class => 'opponentbutton' %>
 		<% end %>
 
@@ -44,3 +46,5 @@
 
 	</div>
 </div>
+<br>
+<br>

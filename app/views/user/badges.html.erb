@@ -1,19 +1,21 @@
 
-<h1 class = "title"> ~ <%= @curr_user.name %>'s Badges ~ </h1>
-<div id = "container" style = "overflow: hidden; width: 100%">
+<h1 class = "title" style = "color: red; opacity: 0.7;"> ~ <%= @curr_user.name %>'s Badges ~ </h1>
+<div id = "container" style = "overflow: hidden; width: 100%; opacity: 0.5;">
 
  	<div class="badges" style = "overflow: hidden; ">
+
  		<% if @no_badge %>
- 			<h1> YOU HAVE NO BADGES </h1>
+ 			<h1 style = "color: orange;"> YOU HAVE NO BADGES </h1>
  		<% else %>
  			<% if @three_win %>
- 				<h1> YOU ARE ON A THREE WIN STREAK </h1>
+ 				<h1 style = "color: blue;"> YOU ARE ON A THREE WIN STREAK </h1> <br>
  			<% end %>
+
  			<% if @five_win %>
- 				<h1> YOU ARE ON A FIVE WIN STREAK </h1>
+ 				<h1 style = "color: green;"> YOU ARE ON A FIVE WIN STREAK </h1> <br> 
  			<% end %>
  			<% if @three_loss %>
- 				<h1> YOU ARE ON A THREE LOSS STREAK </h1>
+ 				<h1 style = "color: red;"> YOU ARE ON A THREE LOSS STREAK </h1>
  			<% end %>
  		<% end %>
 				

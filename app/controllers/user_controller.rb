@@ -38,6 +38,9 @@ class UserController < ApplicationController
 			if @curr_badge.lstreak >= 3
 				@three_loss = true
 			end
+			if !@three_win and !@five_win and !@three_loss 
+				@no_badge = true
+			end
 		end
 	end
 
