@@ -3,6 +3,16 @@ Connect Four
 
 ### Tina Zheng, Nanxi Wang, Casey Takeda, Justin Ma, Melissa Ly
 
+Demo Link
+----------
+http://tinyurl.com/connect4rr
+
+
+Website
+--------
+https://connect4rails.herokuapp.com/
+
+
 Idea
 ----
 An online platform that allows users to create accounts (or login using an existing Facebook account) and play Connect Four against each other. This platform stores all game play data for the current user, such as: wins, losses, win-to-lose ratio, and total games played. Badges are earned when the user achieves a certain amount of wins or losses.
